@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Área Logada - Projetos</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <div id="projectChoice" class="project-choice">
+  <h2>O que você deseja fazer?</h2>
+  <button onclick="startNewProject()">Criar Novo Projeto</button>
+  <button onclick="openExistingProject()">Abrir Projeto Existente</button>
+</div>
+
+<div id="mainApp" class="container" style="display: none;">
+  <aside class="sidebar">
+    <h2>FORMATOS</h2>
+    <button onclick="addShape('retangular')">🟥 Retangular</button>
+    <button onclick="addShape('semicircular')">🌗 Semi-circular</button>
+    <button onclick="addShape('circular')">⚪ Circular</button>
+    <button onclick="addShape('variavel')">📐 Variável</button>
+  </aside>
+
+  <main class="main-content">
+    <div class="controls">
+      <label>Medida horizontal (cm): <input type="number" id="inputWidth" /></label>
+      <label>Medida vertical (cm): <input type="number" id="inputHeight" /></label>
+      <button onclick="resizeSelected()">Redimensionar</button>
+      <input type="text" id="projectName" placeholder="Nome do projeto" />
+      <button onclick="saveProject()">💾 Salvar Projeto</button>
+    </div>
+
+    <div id="projectList" style="margin-top: 15px;"></div>
+
+    <div id="drawingArea" class="drawing-area">
+      <p>Adicione uma forma para começar o projeto.</p>
+    </div>
+  </main>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>

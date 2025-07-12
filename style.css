@@ -1,0 +1,248 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body, html {
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 220px;
+  background: #2c3e50;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  margin-bottom: 15px;
+}
+
+.sidebar button {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  border-radius: 6px;
+  background-color: #34495e;
+  color: white;
+  transition: background 0.3s;
+}
+
+.sidebar button:hover {
+  background-color: #1abc9c;
+}
+
+.main-content {
+  flex: 1;
+  padding: 20px;
+  background: #ecf0f1;
+  display: flex;
+  flex-direction: column;
+}
+
+.controls {
+  margin-bottom: 15px;
+}
+
+.controls input {
+  width: 100px;
+  margin: 0 10px 10px 5px;
+}
+
+#projectList {
+  margin-bottom: 15px;
+  max-height: 120px; /* altura limitada para evitar overflow */
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid #bdc3c7;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+/* Estilo para os botões da lista de projetos */
+#projectList button {
+  display: block;
+  width: 100%;
+  margin-bottom: 6px;
+  padding: 8px 10px;
+  text-align: left;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#projectList button:hover {
+  background-color: #2980b9;
+}
+
+.drawing-area {
+  position: relative;
+  flex-grow: 1;
+  background: white;
+  border: 2px dashed #bdc3c7;
+  overflow: hidden;
+  min-height: 300px;
+}
+
+.shape {
+  position: absolute;
+  border: 2px solid #34495e;
+  cursor: move;
+}
+
+.retangular {
+  width: 100px;
+  height: 60px;
+  background: #e74c3c;
+}
+
+.circular {
+  width: 80px;
+  height: 80px;
+  background: #3498db;
+  border-radius: 50%;
+}
+
+.semicircular {
+  width: 80px;
+  height: 40px;
+  background: #f1c40f;
+  border-top-left-radius: 80px;
+  border-top-right-radius: 80px;
+}
+
+.variavel {
+  width: 100px;
+  height: 60px;
+  background: #9b59b6;
+  transform: skew(10deg);
+}
+
+.project-choice {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #ecf0f1;
+}
+
+.project-choice h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.project-choice button {
+  margin: 10px;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background: #3498db;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.project-choice button:hover {
+  background: #2980b9;
+}
+
+/* Telas menores que 768px (tablets) */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 15px;
+  }
+
+  .sidebar h2 {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .sidebar button {
+    width: 45%;
+    margin: 5px;
+    font-size: 14px;
+  }
+
+  .main-content {
+    padding: 15px;
+  }
+
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-between;
+  }
+
+  .controls input,
+  .controls button {
+    width: 48%;
+  }
+
+  #projectList {
+    max-height: 200px;
+  }
+
+  .drawing-area {
+    height: 60vh;
+  }
+}
+
+/* Telas menores que 480px (celulares) */
+@media (max-width: 480px) {
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .controls input,
+  .controls button {
+    width: 100%;
+  }
+
+  .sidebar button {
+    width: 100%;
+  }
+
+  .drawing-area {
+    height: 50vh;
+  }
+
+  .project-choice h2 {
+    font-size: 20px;
+  }
+
+  .project-choice button {
+    width: 90%;
+    font-size: 15px;
+  }
+
+  #projectList {
+    font-size: 14px;
+    padding: 5px;
+  }
+}
